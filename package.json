@@ -1,0 +1,19 @@
+{
+  "name": "UnitConverter_v0.1",
+  "version": "1.0.0",
+  "description": "Distance unit converter for specific age groups (10-16)",
+  "productName": "UnitConverter",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-mac": "electron-packager . \"Unit Converter\" --overwrite --platform=darwin --arch=x64 --prune=true --out=release-builds",
+    "package-win": "electron-packager . \"Unit Converter\" --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/sensor.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Unit Converter\"",
+    "package-linux": "electron-packager . \"Unit Converter\" --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/sensor.ico --prune=true --out=release-builds --version-string.ProductName=\"Unit Converter\""
+  },
+  "author": "Kristjan Križman",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^4.1.4",
+    "electron-packager": "^13.1.1"
+  }
+}

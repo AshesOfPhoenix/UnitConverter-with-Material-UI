@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="main_window" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/box.css">
+  <link rel="stylesheet" href="../assets/css/sidebar.css">
+  <link rel="stylesheet" href="../assets/css/switch.css">
+  <script type="text/javascript" src=' ../assets/scripts/titlebar.js''> </script> 
+</head> 
+<body>
+  <header id="titlebar">
+    <div id="drag-region">
+      <div id="window-title">
+        <img src="../assets/sensor.ico" style="width:14px;height:15px;">
+        <span class="title-heading">Unit Converter</span>
+      </div>
+      <div id="window-controls">
+        <div class="button" id="min-button">
+          <span>&#xE921;</span>
+        </div>
+        <div class="button" id="max-button">
+          <span>&#xE922;</span>
+        </div>
+        <div class="button" id="restore-button">
+          <span>&#xE923;</span>
+        </div>
+        <div class="button" id="close-button">
+          <span>&#xE8BB;</span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div id="odmik_converter">
+    <div class="converter_placing card-4">
+      <div id="reverse_loc">
+        <button class="reverse" onclick="reverse(document.form_AA.unit_menu, document.form_BB.unit_menu , document.form_A, document.form_B)">
+          <img src="../assets/up-down.png" width="40" height="40">
+        </button>
+      </div>
+      <div id="odmik_insidebox_input">
+          <div class="input">
+            <form name="form_A" onSubmit="return false">
+              <input type="number" class="numbersonly" name="unit_input" maxlength="20" value="" 
+                oninput="CalculateUnit(document.form_A, document.form_AA, document.form_B, document.form_BB)"
+                onchange="CalculateUnit(document.form_A, document.form_AA, document.form_B, document.form_BB)">              
+            </form>
+          </div> <!-- /converter-side-a -->
+      </div>
+      <div id="from_pos">
+        <div class="from">
+          <form name="form_AA">
+            <span>
+              <select name="unit_menu" onChange="CalculateUnit(document.form_A, document.form_AA, document.form_B, document.form_BB)">
+              </select>
+            </span>
+          </form>
+        </div>
+      </div>
+      <div id="odmik_insidebox_output">
+
+        <div class="output">
+          <form name="form_B" onSubmit="return false">
+            <input type="number" class="numbersonly" name="unit_input" maxlength="25" value=""
+              oninput="CalculateUnit(document.form_B, document.form_BB, document.form_A, document.form_AA)"
+              onchange="CalculateUnit(document.form_B, document.form_BB, document.form_A, document.form_AA)">
+          </form>
+        </div> <!-- /converter-side-b -->
+      </div>
+      <div id="to_pos">
+        <div class="to">
+          <form name="form_BB">
+            <span>
+              <select name="unit_menu" onChange="CalculateUnit(document.form_A, document.form_AA, document.form_B, document.form_BB)">
+              </select>
+            </span>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div id="sidebar_left">
+    <div class="sidebar left_menu">
+      <div id="unit_box">
+        <button style="font-size: 1.5rem;" style="font-family: ' Gill Sans', 'Gill Sans MT' , Calibri, 'Trebuchet MS' ,
+    sans-serif;";
+    onclick="UpdateUnitMenu(0, document.form_AA.unit_menu, document.form_A); UpdateUnitMenu(0, document.form_BB.unit_menu, document.form_B); new_prop(0); areaBack()"
+    class="selection_box0 card-1">
+          <b>AREA</b>
+        </button>
+      </div>
+
+      <div id="unit_box">
+        <button style="font-size: 1.5rem;" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"; onclick="UpdateUnitMenu(1, document.form_AA.unit_menu, document.form_A); UpdateUnitMenu(1, document.form_BB.unit_menu, document.form_B); new_prop(1); lengthBack()" class="selection_box1 card-1">
+          <b>LENGTH</b>
+        </button > 
+      </div>
+      
+      <div id="unit_box">
+        <button style="font-size: 1.5rem;" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"; onclick="UpdateUnitMenu(2, document.form_AA.unit_menu, document.form_A); UpdateUnitMenu(2, document.form_BB.unit_menu, document.form_B); new_prop(2); volumeBack()" class="selection_box2 card-1">
+          <b>VOLUME</b>
+        </button >
+      </div>
+
+      <div id="unit_box">
+        <button style="font-size: 1.5rem;" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"; onclick="UpdateUnitMenu(3, document.form_AA.unit_menu, document.form_A); UpdateUnitMenu(3, document.form_BB.unit_menu, document.form_B); new_prop(3); massBack()" class="selection_box3 card-1">
+          <b>MASS</b>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <label class="switch" id="odmik_check">
+    <input type="checkbox" id="check1" onchange="toggleCheckMetric()" checked>
+    <span class="slider round"></span>
+  </label> 
+  
+
+  <label class="switch" id="odmik_check1">
+    <input type="checkbox" id="check2" onchange="toggleCheckMetric()">
+    <span class="slider round"></span>
+  </label>
+  <p class="switch_text">
+    <b style="margin-left: 313px">Metric System</b>
+    <b style="margin-left: 93px">Imperial System</b>
+  </p>
+  <p class="age">
+    <b>Age group: 10-16</b>
+  </p>
+  <script>
+    function myFunction(name) {
+      var element = document.getElementById(name);
+      element.classList.remove("selection_box");
+      element.classList.toggle("selection_box_click");
+    }
+    function areaBack() {
+      var x = document.getElementsByClassName("converter_placing");
+      x[0].style.background = "#E27D60";
+    }
+    function lengthBack() {
+      var x = document.getElementsByClassName("converter_placing");
+      x[0].style.background = "#E8A87C";
+    }
+    function volumeBack() {
+      var x = document.getElementsByClassName("converter_placing");
+      x[0].style.background = "#C38D9E";
+    }
+    function massBack() {
+      var x = document.getElementsByClassName("converter_placing");
+      x[0].style.background = "#41B3A3";
+    }
+    // You can also require other files to run in this process
+    require('../renderer.js') </script>
+  <script type="text/javascript" src='../assets/scripts/converter.js''> </script>
+  </body>
+
+</html>

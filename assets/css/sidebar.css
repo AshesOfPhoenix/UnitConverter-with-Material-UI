@@ -1,0 +1,96 @@
+
+.sidebar {
+    height: 65px;
+    width: 202.3%;
+    display: block;
+    z-index: 4;
+    
+}
+.shadow {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+#sidebar_left {
+    top: 0;
+    position: fixed;
+    margin-left: 25px;
+    margin-top: 1px;
+}
+
+#unit_box{
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    
+    
+}
+
+.settings_box_design{
+    background: rgb(100, 86, 223);
+    height: 40px;
+    width: 120px;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.selection_box0{
+    background: #E27D60;
+    height: 60px;
+    width: 230px;
+    text-align: center;
+    line-height: 40px;
+    margin-top: 22px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border: none;
+    outline: none;
+    
+}
+.selection_box1{
+    background: #E8A87C;
+    height: 60px;
+    width: 230px;
+    text-align: center;
+    line-height: 40px;
+    margin-top: 22px;
+    border: none;
+    outline: none;
+}
+.selection_box2{
+    background: #C38D9E;
+    height: 60px;
+    width: 230px;
+    text-align: center;
+    line-height: 40px;
+    margin-top: 22px;
+    border: none;
+    outline: none;
+}
+.selection_box3{
+    background:  #41B3A3;
+    height: 60px;
+    width: 230px;
+    text-align: center;
+    line-height: 40px;
+    margin-top: 22px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: none;
+    outline: none;
+}
+.selection_box_click {
+    background: rgb(5, 2, 31);
+    height: 40px;
+    width: 120px;
+    text-align: center;
+    line-height: 40px;
+}
+#icon_dis_left {
+    top: 0;
+    position: fixed;
+    margin-top: 30px;
+    margin-left: 68px;
+}
+
