@@ -1,6 +1,7 @@
-This is a basic Unit Converter with Metric and Imperial System units made with Electron.
+# Unit Converter
 
-To open a packaged app you can download it from here: https://1drv.ms/f/s!AsW7Zd9COsCehpg9yHoYRwnvvCZE_w
+This is a basic Unit Converter with Metric and Imperial System units made with Electron. 
+Project was made as a homework for a User Interfaces course at the [Faculty of Computer and Information Science, University of Ljubljana](https://www.fri.uni-lj.si).
 
-To open the project you need VS Code installed with Electron and node.js as well.
+![Image](https://i.imgur.com/GgF6mXk.png)
 
